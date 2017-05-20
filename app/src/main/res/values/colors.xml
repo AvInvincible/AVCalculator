@@ -2,5 +2,9 @@
 <resources>
     <color name="colorPrimary">#6bcded</color>
     <color name="colorPrimaryDark">#1280a6</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#a4eaf1</color>
+    <color name="ButtonPressed">#dcf0f7</color>
+    <color name="ButtonFocused">#a3c1cc</color>
+    <color name="cancel">#fbfa1410</color>
+    <color name="cancelPressed">#fbfc7270</color>
 </resources>

@@ -12,14 +12,14 @@
     <TableRow>
         <EditText
             android:id="@+id/sourceOut"
-            android:layout_margin="20dp"
+            android:layout_marginBottom="20dp"
             android:layout_height="60dp"
             android:layout_width="0dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:background="@drawable/editAppStyle"/>
     </TableRow>
 
-    <TableRow
-        android:layout_margin="10px">
+    <TableRow>
         <Button
             android:id="@+id/back"
             android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
             android:layout_weight="1"
             android:text="←"
             android:layout_margin="10px"
-            android:background="@color/colorPrimary"/>
+            android:background="@drawable/button_style"/>
         <Button
             android:id="@+id/cancel"
             android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
             android:layout_weight="1"
             android:text="C"
             android:layout_margin="10px"
-            android:background="@android:color/holo_red_light"/>
+            android:background="@drawable/cancel_button_style"/>
         <Button
             android:id="@+id/squRoot"
             android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
             android:layout_weight="1"
             android:text="√a"
             android:layout_margin="10px"
-            android:background="@color/colorPrimary"/>
+            android:background="@drawable/button_style"/>
         <Button
             android:id="@+id/cubRoot"
             android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
             android:layout_weight="1"
             android:text=" 3√a"
             android:layout_margin="10px"
-            android:background="@color/colorPrimary"/>
+            android:background="@drawable/button_style"/>
 
     </TableRow>
 
@@ -63,7 +63,7 @@
             android:layout_weight="1"
             android:text="Mod"
             android:layout_margin="10px"
-            android:background="@color/colorPrimary"/>
+            android:background="@drawable/button_style"/>
         <Button
             android:id="@+id/div"
             android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
             android:layout_weight="1"
             android:text="%"
             android:layout_margin="10px"
-            android:background="@color/colorPrimary"/>
+            android:background="@drawable/button_style"/>
         <Button
             android:id="@+id/mul"
             android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
             android:layout_weight="1"
             android:text="*"
             android:layout_margin="10px"
-            android:background="@color/colorPrimary"/>
+            android:background="@drawable/button_style"/>
         <Button
             android:id="@+id/plushMinus"
             android:layout_height="wrap_content"
@@ -87,25 +87,28 @@
             android:layout_weight="1"
             android:text="±"
             android:layout_margin="10px"
-            android:background="@color/colorPrimary"/>
+            android:background="@drawable/button_style"/>
 
     </TableRow>
 
     <TableRow>
         <Button
             android:id="@+id/seven"
+            android:layout_margin="10px"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:text="7"/>
         <Button
             android:id="@+id/eight"
+            android:layout_margin="10px"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:text="8"/>
         <Button
             android:id="@+id/nine"
+            android:layout_margin="10px"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -117,25 +120,28 @@
             android:layout_weight="1"
             android:text="-"
             android:layout_margin="10px"
-            android:background="@color/colorPrimary"/>
+            android:background="@drawable/button_style"/>
 
     </TableRow>
 
     <TableRow>
         <Button
             android:id="@+id/four"
+            android:layout_margin="10px"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:text="4"/>
         <Button
             android:id="@+id/five"
+            android:layout_margin="10px"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:text="5"/>
         <Button
             android:id="@+id/six"
+            android:layout_margin="10px"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -147,25 +153,28 @@
             android:layout_weight="1"
             android:text="+"
             android:layout_margin="10px"
-            android:background="@color/colorPrimary"/>
+            android:background="@drawable/button_style"/>
 
     </TableRow>
 
     <TableRow>
         <Button
             android:id="@+id/one"
+            android:layout_margin="10px"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:text="1"/>
         <Button
             android:id="@+id/two"
+            android:layout_margin="10px"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:text="2"/>
         <Button
             android:id="@+id/three"
+            android:layout_margin="10px"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -177,18 +186,25 @@
             android:layout_weight="1"
             android:text="0"
             android:layout_margin="10px"
-            android:background="@color/colorPrimary"/>
+            android:background="@drawable/button_style"/>
 
     </TableRow>
 
-    <TableRow>
+    <TableRow
+        android:layout_marginTop="10dp">
+        <ImageView
+            android:id="@+id/AVLogo"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/logo"/>
         <Button
             android:id="@+id/result"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:text="="
-            android:background="@color/colorPrimaryDark"/>
+            android:background="@drawable/button_style"/>
 
     </TableRow>
 
