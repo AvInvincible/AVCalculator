@@ -3,6 +3,8 @@ package com.avinc.avcalculator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import static java.sql.DriverManager.println;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -12,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void test(){
+        println("Add");
         println("Add");
     }
 }
