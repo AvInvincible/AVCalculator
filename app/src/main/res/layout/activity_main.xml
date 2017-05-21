@@ -1,24 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="40px"
-    android:orientation="vertical"
-    android:visibility="visible"
     tools:context="com.avinc.avcalculator.MainActivity">
+
+<TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10px"
+    android:orientation="vertical"
+    android:visibility="visible">
+
 
     <TableRow>
         <EditText
             android:id="@+id/sourceOut"
+            android:textSize="30dp"
+            android:padding="10dp"
             android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
             android:layout_height="60dp"
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:cursorVisible="false"
             android:background="@drawable/editapp_style"/>
     </TableRow>
-
     <TableRow>
         <Button
             android:id="@+id/back"
@@ -65,7 +74,7 @@
             android:layout_margin="10px"
             android:background="@drawable/button_style"/>
         <Button
-            android:id="@+id/div"
+            android:id="@+id/per"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -81,11 +90,11 @@
             android:layout_margin="10px"
             android:background="@drawable/button_style"/>
         <Button
-            android:id="@+id/plushMinus"
+            android:id="@+id/div"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="±"
+            android:text="/"
             android:layout_margin="10px"
             android:background="@drawable/button_style"/>
 
@@ -114,7 +123,7 @@
             android:layout_weight="1"
             android:text="9"/>
         <Button
-            android:id="@+id/Minus"
+            android:id="@+id/minus"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -191,10 +200,10 @@
     </TableRow>
 
     <TableRow
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="0dp">
         <ImageView
             android:id="@+id/AVLogo"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:src="@drawable/logo"/>
@@ -209,6 +218,5 @@
 
     </TableRow>
 
-
-
 </TableLayout>
+</ScrollView>
