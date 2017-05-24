@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import static android.R.attr.x;
 import static android.R.id.input;
 
 
@@ -13,8 +15,9 @@ public class MainActivity extends AppCompatActivity {
 
     EditText outputScreen;
     Button mul, sub, add, div, resultB, mod, perc, cancel, back, sqrt, cubrt, zero, one, two, three, four, five, six, seven, eight, nine;
-    double input1, input2, result = 0;
-    String operator = "";
+    double input1, result = 0;
+    String operator, prevOperator = "";
+    int ajit = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 outputScreen.setText("");
+                result = 0;
             }
         });
 
@@ -241,13 +245,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void getInput1(){
         //System.out.println("Value1 :");
-        input1 = Double.parseDouble(outputScreen.getText()+"");
-        result = input1;
+        input1 = Double.parseDouble(outputScreen.getText() + "");
+        ajit++;
     }
 
     private void setOpertion(String x){
         operator = x;
-        outputScreen.setText("");
+        outputScreen.setText(input1+"");
+        Toast.makeText(this, x, Toast.LENGTH_LONG).show();
         getOperation();
     }
 
@@ -255,45 +260,104 @@ public class MainActivity extends AppCompatActivity {
         // TODO Auto-generated method stub
         //System.out.println("Operation :");
         if(operator.equals("=")){
-            outputScreen.setText(""+result);
-        }else if(operator.equals("+") || operator.equals("-") || operator.equals("*") || operator.equals("/") || operator.equals("Mod")){
+            ajit = 0;
+            if(prevOperator.equals("per") || prevOperator.equals("sqrt") || prevOperator.equals("cbrt")){
+                outputScreen.setText("" + result);
+                if(operator.equals("=")){
+                    input1 = Double.parseDouble(outputScreen.getText()+"");
+                }else{
+                    Toast.makeText(this, "Invalid inputs", Toast.LENGTH_LONG).show();
+                }
+            }else if(prevOperator.equals("+") || prevOperator.equals("-") || prevOperator.equals("*") || prevOperator.equals("/") || prevOperator.equals("Mod")){
+                String k = prevOperator;
+                computation(k);
+                outputScreen.setText("" + result);
+                if(operator.equals("=")){
+                    input1 = Double.parseDouble(outputScreen.getText()+"");
+                }else{
+                    Toast.makeText(this, "Invalid inputs", Toast.LENGTH_LONG).show();
+                }
+
+            }else{
+                Toast.makeText(this, "Invalid inputs", Toast.LENGTH_LONG).show();
+            }
+        }
+        else if(operator.equals("+") || operator.equals("-") || operator.equals("*") || operator.equals("/") || operator.equals("Mod")){
             String k = operator;
+            prevOperator = operator;
             computation(k);
         }else if(operator.equals("per") || operator.equals("sqrt") || operator.equals("cbrt")){
             String k = operator;
+            prevOperator = operator;
             uNiaryResult(k);
         }
+            else{
+            Toast.makeText(this, "Invalid inputs", Toast.LENGTH_LONG).show();
+        }
+
     }
 
     private void uNiaryResult(String x) {
         // TODO Auto-generated method stub
         if(x.equals("sqrt")){
-            result = Math.sqrt(result);
+            result = Math.sqrt(input1);
+            outputScreen.setText(""+result);
+            input1 = Double.parseDouble(outputScreen.getText()+"");
         }else if(x.equals("cbrt")){
-            result = Math.cbrt(result);
+            result = Math.cbrt(input1);
+            outputScreen.setText(""+result);
+            input1 = Double.parseDouble(outputScreen.getText()+"");
         }else if(x.equals("per")){
-            result = result / 100;
+            result = input1 / 100;
+            outputScreen.setText(""+result);
+            input1 = Double.parseDouble(outputScreen.getText()+"");
+        }else{
+            Toast.makeText(this, "Invalid inputs", Toast.LENGTH_LONG).show();
         }
     }
 
     private void computation(String x){
         if(x.equals("+")){
-            input2 = input2 + input1;
-            result = input2;
+            result = result + input1;
+            outputScreen.setText("");
         }else if(x.equals("-")){
-            input2 = input2 - input1;
-            result = input2;
+            if(ajit == 1) {
+                result = input1;
+                outputScreen.setText("");
+            }else{
+                result = result - input1;
+                outputScreen.setText("");
+            }
         }else if(x.equals("*")){
-            input2 = input2 * input1;
-            result = input2;
+            if(ajit == 1) {
+                result = 1;
+                result = input1;
+                outputScreen.setText("");
+            }else{
+                result = result * input1;
+                outputScreen.setText("");
+            }
         }else if(x.equals("/")){
-            input2 = input2 / input1;
-            result = input2;
+            if(ajit == 1) {
+                result = input1;
+                outputScreen.setText("");
+            }else{
+                result = result/input1;
+                outputScreen.setText("");
+                            }
         }else if(x.equals("Mod")) {
-            input2 = input2 % input1;
-            result = input2;
+            if(ajit == 1) {
+                result = input1;
+                outputScreen.setText("");
+            }else{
+                result = result%input1;
+                outputScreen.setText("");
+            }
+        }else{
+            Toast.makeText(this, "Invalid inputs", Toast.LENGTH_LONG).show();
         }
     }
+
 
 
 }
